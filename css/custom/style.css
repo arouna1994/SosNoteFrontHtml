@@ -152,7 +152,7 @@ a {
   display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  color:#9e9e9e;
+  color:white;
 }
 
 a:hover,
@@ -4704,4 +4704,19 @@ body.our-team .our_team_main_content .team_member {margin-top: 0;margin-bottom: 
 }
 body.bg {
   background: url(../../images/home/pattern.png) repeat;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#button {
+  margin-bottom: 4%;
+}
+
+#button span {
+  color:white;
+  
 }
