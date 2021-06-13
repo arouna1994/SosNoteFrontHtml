@@ -10,6 +10,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<title>SOS Notes</title>
+
+        <!-- Debut -->
+
+       
+
+		<!-- Fin -->
+
+
+
         <link rel="stylesheet" href="css/normalize.css">
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
@@ -27,6 +36,8 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="images/fav-icon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="images/fav-icon/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="images/fav-icon/favicon-16x16.png">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 		<script  src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 
@@ -139,10 +150,10 @@
 							
 	<form class="well form-horizontal" action="index.html" method="post"  id="form">
 
-		<legend><center><h2><b>Mon bésoin </b></h2></center></legend><br>
+		<legend><center><h2><b>Ma demande </b></h2></center></legend><br>
         <br/>
         <div class="row" id="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" id="row1">
             <fieldset>
             <legend ><span class="number">1</span>Type de document</legend>
             <label for="job">Choisir type document:</label>
@@ -219,7 +230,115 @@
           <fieldset id="choix_fichier_import">
             
           </fieldset>
+		  <fieldset id="saisir_donnee">
+			<legend><span class="number">5</span>Saisir mes infos personnels </legend>
+			<label for="structure_ciblee">Structure ciblée:</label>
+			<input type="text" id="structure_ciblee" name="structure_ciblee">
+	
+			<label for="nom">Nom:</label>
+			<input type="text" id="nom" name="nom" class="form-control" >
+			
+			<label for="prenom">Prénom:</label>
+			<input type="text" id="prenom" name="prenom" class="form-control" >
+	
+			<label for="etat_civil">Etat civil:</label>
+			<input type="text" id="etat_civil" name="etat_civil">
+	
+			<label for="date_naissance">Date de naissance:</label>
+			<input type="text" id="date_naissance" name="date_naissance">
+	
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email">
+	
+			<label for="telephone">Téléphone:</label>
+			<input type="text" id="telephone" name="telephone">
+	
+			 <label for="adresse_phy">Adresse physique:</label>
+			<input type="text" id="adresse_phy" name="adresse_phy">
+			<br/><br/><br/>
+			</fieldset>
         </div>
+		<div class="col-sm-6" id="row2">
+			<fieldset id="parcours_professionel">
+				<legend><span class="number">6</span>Parcours professionel</legend>
+				<label for="stage">Stage:</label>
+			    <textarea id="stage" name="stage"></textarea>
+		
+				<label for="emploi">Emploi:</label>
+				<textarea id="emploi" name="emploi"></textarea>
+				<br/><br/><br/>
+			    </fieldset>
+				<fieldset id="parcours_etudes">
+				<legend><span class="number">7</span>Parcours d'études</legend>
+				<label for="parcours_etude">Saisir les informations:</label>
+				<textarea id="parcours_etude" name="parcours_etude"></textarea>
+				<br/><br/><br/>
+				</fieldset>
+             <fieldset id="langue">
+			<legend><span class="number">8</span>Langues</legend>
+            
+				<div class="form-group fieldGroup">
+					<div class="input-group">
+						<div class="row">
+							<div class="col-sm-3"> 
+							  <input type="text" name="name[]" class="form-control" placeholder="Enter name"/>
+							</div>
+							<div class="col-sm-3"> 
+							  <input type="text" name="email[]" class="form-control" placeholder="Enter email"/>
+						  </div>
+						  <div class="col-sm-3"> 
+							<input type="text" name="email[]" class="form-control" placeholder="Enter email"/>
+						</div>
+						<div class="col-sm-3">
+							<div class="input-group-addon"> 
+								<a href="javascript:void(0)" class="btn btn-success addMore"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</a>
+							</div>
+						</div>
+						  </div>
+
+					</div>
+				</div>
+				
+				
+			
+			<!-- copy of input fields group -->
+			<div class="form-group fieldGroupCopy" style="display: none;">
+				<div class="input-group">
+					<div class="row">
+						<div class="col-sm-3"> 
+						  <input type="text" name="name[]" class="form-control" placeholder="Enter name"/>
+						</div>
+						<div class="col-sm-3"> 
+						  <input type="text" name="email[]" class="form-control" placeholder="Enter email"/>
+					  </div>
+					  <div class="col-sm-3"> 
+						<input type="text" name="email[]" class="form-control" placeholder="Enter email"/>
+					</div>
+					<div class="col-sm-3"> 
+					<div class="input-group-addon"> 
+						<a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</a>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			 </fieldset>
+
+			 <fieldset id="parcours_professionel">
+				<legend><span class="number">9</span>Charger votre photo</legend>
+				<div class="profile-images-card">
+				 <div class="profile-images">
+				     <img src="images/profile.png" id="upload-img">
+				  </div>
+				  <div class="custom-file">
+				    <label for="fileupload">Upload Profile</label>
+				    <input type="file" id="fileupload">
+				 </div>
+				 </div>
+		
+				</fieldset>
+			<br/><br/><br/>
+		</div>
         
       </div>   
           <div class="container" style="max-width: 10%;">
@@ -308,6 +427,25 @@
 
 
 		<!-- Js File_________________________________ -->
+<!-- Debut -->
+
+<!-- <script src="static/js/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="js/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		$("#fileupload").change(function(event) {
+			var x = URL.createObjectURL(event.target.files[0]);
+			$("#upload-img").attr("src",x);
+			console.log(event);
+		});
+	})
+</script>
+
+<!-- Fin -->
+
 
 		<!-- j Query -->
 		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
@@ -319,6 +457,7 @@
 		<!-- Google map js -->
 		<script src="http://maps.google.com/maps/api/js"></script> <!-- Gmap Helper -->
 		<script src="js/gmap.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- revolution -->
 		<script src="vendor/revolution/jquery.themepunch.tools.min.js"></script>
 		<script src="vendor/revolution/jquery.themepunch.revolution.min.js"></script>
@@ -340,14 +479,34 @@
 		<!-- js count to -->
 		<script type="text/javascript" src="vendor/jquery.appear.js"></script>
 		<script type="text/javascript" src="vendor/jquery.countTo.js"></script>
-	
-
-		<!-- Theme js _________ -->
+			<!-- Theme js _________ -->
 		<script src="js/monjs/formulaire_besoin.js"></script>
 		<script type="text/javascript" src="js/theme.js"></script>
 		<script src="js/map-script.js"></script>
-
+		<script type="text/javascript" >
+		
+		
+		$(document).ready(function(){
+    //group add limit
+    var maxGroup = 10;
+    
+    //add more fields group
+    $(".addMore").click(function(){
+        if($('body').find('.fieldGroup').length < maxGroup){
+            var fieldHTML = '<div class="form-group fieldGroup">'+$(".fieldGroupCopy").html()+'</div>';
+            $('body').find('.fieldGroup:last').after(fieldHTML);
+        }else{
+            alert('Maximum '+maxGroup+' groups are allowed.');
+        }
+    });
+    
+    //remove fields group
+    $("body").on("click",".remove",function(){ 
+        $(this).parents(".fieldGroup").remove();
+    });
+});
+		</script>
 		</div>  <!-- End of .page_wrapper -->
-
+		
 	</body>
 </html>
